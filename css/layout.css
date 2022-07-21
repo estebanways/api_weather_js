@@ -85,7 +85,6 @@ select, .button-box {
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
-    #margin: 12px auto;
     background: #006A7A;
     color: white;
     font-size: 1.0rem;
