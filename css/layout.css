@@ -196,6 +196,7 @@ footer {
         font-size: 100%;
         line-height: 1.3;
     }
+
     .mainnav {
     }
 }
@@ -251,6 +252,7 @@ footer {
         width: 25%;
         list-style: none;
     }
+
     .mainnav > li:last-child {
     }
 
