@@ -1,0 +1,278 @@
+/***********************************
+    Generic Gradients
+#FBD62E
+#94C84B
+#34AE70
+#008E83
+#006A7A
+#2F4858
+
+Font-sizes for Typographic Hierarchy
+5.063rem
+3.375rem
+2.25rem
+1.5rem
+1.0rem
+***********************************/
+
+/***********************************
+    Defaults
+***********************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #2F4858;
+}
+
+h1 {
+    font-size: 3.375rem;
+    font-family: 'Monserrat', Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    padding: 1rem 0;
+}
+
+h2 {
+    font-size: 3.375rem;
+    font-family: 'Monserrat', Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    line-height: 4rem;
+    padding: 1rem 0;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-family: 'Monserrat', Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    line-height: 4rem;
+    padding: 1rem 0;
+}
+
+p {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+footer p {
+    font-size: 1.0rem;
+    line-height: 1.6rem;
+    font-family: 'Monserrat', Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    color: #999;
+}
+
+footer a,
+footer a:visited {
+    color: hsl(240, 50%, 85%);
+    text-decoration: underline;
+}
+
+footer a:active,
+footer a:focus,
+footer a:hover {
+    font-weight: 900;
+    color: hsl(240, 50%, 85%);
+    text-decoration: underline;
+}
+
+select, .button-box {
+    padding: 9px;
+    margin: auto;
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    #margin: 12px auto;
+    background: #006A7A;
+    color: white;
+    font-size: 1.0rem;
+    font-family: inherit;
+    font-weight: 900;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.button-container {
+display: flex;
+width: 100px;
+justify-content: center;
+}
+
+/***********************************
+    Navigation
+***********************************/
+nav {
+    
+}
+
+ul.mainnav {
+    width: 100%;
+    overflow: auto;
+}
+
+.mainnav > li {
+    float:left;
+    width: 100%;
+    list-style: none;
+
+    padding: 2.25rem 0;
+}
+
+.mainnav a,
+.mainnav a:visited {
+    font-size: 2.25rem;
+    display: block;
+    text-align: center;
+    color: hsl(240, 50%, 35%);
+    text-decoration: none;
+}
+
+.mainnav a:active,
+.mainnav a:focus,
+.mainnav a:hover {
+    color: hsl(240, 50%, 85%);
+}
+
+.search-nav {
+    list-style: none;
+}
+
+/***********************************
+    Layout
+***********************************/
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #008E83;
+    color: #fff;
+}
+
+nav {
+    width: 100%;
+}
+
+.search-nav {
+    padding-top: 20%;
+}
+
+main {
+    width: 100%;
+    padding: 0 0 1rem 0;
+}
+
+.col-2 {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+footer {
+    padding: 1rem 2rem;
+    width: 100%;
+    clear: both;
+}
+
+/***********************************
+  Media Queries
+***********************************/
+/* small */
+@media only screen and (max-width: 25em) {
+    article {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 25em) {
+    html {
+        font-size: 100%;
+        line-height: 1.3;
+    }
+    .mainnav {
+    }
+}
+
+/* medium */
+@media only screen and (max-width: 38em) {
+    article {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (min-width: 38em) {
+    html {
+        font-size: 110%;
+        line-height: 1.4;
+    }
+
+    ul.mainnav {
+    }
+
+    .mainnav > li {
+        float: left;
+
+        width: 50%;
+        list-style: none;
+    }
+
+    .mainnav > li {
+        padding: 1.5rem 0;
+    }
+
+    .large-button {
+        width: 65%;
+    }
+
+    article {
+        visibility: hidden;
+    }
+}
+
+/* large */
+@media only screen and (min-width: 60em) {   
+    html {
+        font-size: 120%;
+        line-height: 1.5;
+    }
+
+    ul.mainnav {
+    }
+
+    .mainnav > li {
+        float: left;
+        width: 25%;
+        list-style: none;
+    }
+    .mainnav > li:last-child {
+    }
+
+    .col-2 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-2:last-child {
+    }
+}
+
+/* extra large */
+@media only screen and (max-width: 90em) {
+    .search-nav {
+        padding-top: 10%;
+    }
+}
+
+@media only screen and (min-width: 90em) {
+    html {
+        font-size: 130%;
+    }
+}

@@ -1,3 +1,5 @@
+/* ------------------- SELECT CONTROLS FILE ---------------- */
+
 
 const API_KEY = 'askdasdkqwufim12oem12dqiciaskxsldqjwq';
 const WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -94,3 +96,6 @@ function main() {
 window.onload = () => {
   main();
 }
+
+
+/* ------------------- END OF SELECT CONTROLS FILE ---------------- */
