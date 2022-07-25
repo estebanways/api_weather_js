@@ -25,6 +25,7 @@ function populateCountries(countrySelect) {
 /* Connects to the API and retrieves data */
 const getWeather = async (locate) => {
   return new Promise((resolve, reject) => {
+    console.log(`${WEATHER_URL}?q=${locate}&APPID=${API_KEY}`);
     axios.get(`${WEATHER_URL}?q=${locate}&APPID=${API_KEY}`)
       .then((response) => {
         resolve(response);
@@ -37,10 +38,52 @@ const getWeather = async (locate) => {
 
 /* Populates a container with data = response */
 const render = (data) => {
-container.innerHTML =`
-<p>${data.data.name}:</p>
-<p>${data.data.main.temp} °F</p>
-`;
+  // Destructuring
+  let { weather: [{ description: firstValue }] } = data.data;
+  console.log('data.data using destructuring:', firstValue);
+
+  /* Update location thumbnail */
+  let photo = '';
+  
+  if (data.data.name == 'Santiago') {
+    photo = '../images/chile-santiago.jpg';
+  }
+  if (data.data.name == 'Valdivia') {
+    photo = '../images/chile-valdivia.jpeg';
+  }
+  if (data.data.name == 'Port Montt') {
+    photo = '../images/chile-puerto-montt.jpg';
+  }
+  if (data.data.name == 'Santiago de Cali') {
+    photo = '../images/colombia-cali.jpg';
+  }
+  if (data.data.name == 'Bogota') {
+    photo = '../images/colombia-bogota.jpg';
+  }
+  if (data.data.name == 'Medellín') {
+    photo = '../images/colombia-medellin.jpeg';
+  }
+
+  /* Converts degrees */
+  const fahrenheitTemp = data.data.main.temp;
+
+  celsiusTemp = 0;
+
+  function convertToCelsius(fahrenheit) {
+    celsiusTemp = Math.round((fahrenheitTemp - 32) * (5/9) * 100) / 100;
+    return celsiusTemp;
+  }
+
+  convertToCelsius(fahrenheitTemp);
+
+  container.innerHTML =`
+  <div class="weather">
+  <img class="thumbnail" src="${photo}" alt="the best web in the world" height="150" width="150"></img>
+  <p class="highlight">${data.data.name}:</p>
+  <p class="highlight">Status: <em>${firstValue}</em></p>
+  <p class="highlight">Temperature: <em>${data.data.main.temp} °F</em> / <em>${celsiusTemp} °C</em></p>
+  </div>
+  `;
 };
 
 /* Cleans up both select controls */
